@@ -70,43 +70,43 @@ class Ataa_Widget extends WP_Widget{
 				echo "<span class='name-title'>";
 				if($options['display_name'] != 5){
 					echo '<span class="name">';
-						if($options['display_name'] == 2 && get_the_author_meta('user_login', $theAuthroID) != null):  echo get_the_author_meta('user_login', $theAuthorID); 
-							elseif($options['display_name'] == 3 && get_the_author_meta('user_firstname', $theAuthroID) != null):  echo get_the_author_meta('user_firstname', $theAuthorID); 
-							elseif($options['display_name'] == 4 && get_the_author_meta('user_lastname', $theAuthroID) != null):  echo get_the_author_meta('user_lastname', $theAuthorID); 
+						if($options['display_name'] == 2 && get_the_author_meta('user_login', $theAuthorID) != null):  echo get_the_author_meta('user_login', $theAuthorID); 
+							elseif($options['display_name'] == 3 && get_the_author_meta('user_firstname', $theAuthorID) != null):  echo get_the_author_meta('user_firstname', $theAuthorID); 
+							elseif($options['display_name'] == 4 && get_the_author_meta('user_lastname', $theAuthorID) != null):  echo get_the_author_meta('user_lastname', $theAuthorID); 
 							else: echo get_the_author_meta('display_name', $theAuthorID); 
 						endif;
 					echo '</span>';
 				}
 				if($options['show_gravatar']){
-					echo '<span class="gravatar '. $options['gravatar_align'] .'">' . get_avatar( get_the_author_meta('user_email', $theAuthroID), $size = $options['gravatar_size']) . '</span>'; 
+					echo '<span class="gravatar '. $options['gravatar_align'] .'">' . get_avatar( get_the_author_meta('user_email', $theAuthorID), $size = $options['gravatar_size']) . '</span>'; 
 				}	
-				if($options['show_title'] && get_the_author_meta('title', $theAuthroID) != null)echo '<span class="title">'. get_the_author_meta('title', $theAuthroID) . '</span>';
+				if($options['show_title'] && get_the_author_meta('title', $theAuthorID) != null)echo '<span class="title">'. get_the_author_meta('title', $theAuthorID) . '</span>';
 				
-				if($options['show_company'] && get_the_author_meta('company', $theAuthroID) != null)echo '<span class="company">'. get_the_author_meta('company', $theAuthroID) . '</span>';
+				if($options['show_company'] && get_the_author_meta('company', $theAuthorID) != null)echo '<span class="company">'. get_the_author_meta('company', $theAuthorID) . '</span>';
 				echo "</span>";
-				if($options['show_bio'] && get_the_author_meta('user_description', $theAuthroID) != null) echo '<p class="bio">'.get_the_author_meta('user_description', $theAuthroID).'</p>';
+				if($options['show_bio'] && get_the_author_meta('user_description', $theAuthorID) != null) echo '<p class="bio">'.get_the_author_meta('user_description', $theAuthorID).'</p>';
 				
 				if($options['show_phone'] || $options['show_email'] || $options['show_web']){
 					echo "<p class='contact'>";
-					if($options['show_phone'] && get_the_author_meta('phone', $theAuthroID) != null)echo '<span class="phone"><strong>Phone : </strong> '. get_the_author_meta('phone', $theAuthroID) . '</span>';
-					if($options['show_email'] && get_the_author_meta('email', $theAuthroID) != null)echo '<span class="email"><strong>Email : </strong> <a href="mailto:'.get_the_author_meta('user_email', $theAuthroID).'">' . get_the_author_meta('user_email', $theAuthroID) . '</a></span>';
-					if($options['show_web'] && get_the_author_meta('user_url', $theAuthroID) != null)echo '<span class="web"><strong>Web : </strong> <a href="'.get_the_author_meta('user_url', $theAuthroID).'">'.get_the_author_meta('user_url', $theAuthroID).'</a></span>';
+					if($options['show_phone'] && get_the_author_meta('phone', $theAuthorID) != null)echo '<span class="phone"><strong>Phone : </strong> '. get_the_author_meta('phone', $theAuthorID) . '</span>';
+					if($options['show_email'] && get_the_author_meta('email', $theAuthorID) != null)echo '<span class="email"><strong>Email : </strong> <a href="mailto:'.get_the_author_meta('user_email', $theAuthorID).'">' . get_the_author_meta('user_email', $theAuthorID) . '</a></span>';
+					if($options['show_web'] && get_the_author_meta('user_url', $theAuthorID) != null)echo '<span class="web"><strong>Web : </strong> <a href="'.get_the_author_meta('user_url', $theAuthorID).'">'.get_the_author_meta('user_url', $theAuthorID).'</a></span>';
 					echo "</p>";
 				}
 				
 				
-				if(($options['show_twitter'] && get_the_author_meta('twitter', $theAuthroID) != null) || ($options['show_facebook'] && get_the_author_meta('facebook', $theAuthroID) != null) || ($options['show_linkedin'] && get_the_author_meta('linkedin', $theAuthroID) != null)){
+				if(($options['show_twitter'] && get_the_author_meta('twitter', $theAuthorID) != null) || ($options['show_facebook'] && get_the_author_meta('facebook', $theAuthorID) != null) || ($options['show_linkedin'] && get_the_author_meta('linkedin', $theAuthorID) != null)){
 					echo "<p class='social'>";
 					if($options['social_text'] != null){ echo $options['social_text'] ."<br/>"; }
 					if($options['social_link']){
-						if($options['show_twitter'] && get_the_author_meta('twitter', $theAuthroID) != null)echo '<span class="twitter"><a href="'.get_the_author_meta('twitter', $theAuthroID).'"><img src="'. ATAA_PLUGIN_URL .'/images/icons/'. $options['social_link'] .'/twitter.png"/></a></span>';
-						if($options['show_facebook'] && get_the_author_meta('facebook', $theAuthroID) != null)echo '<span class="facebook"><a href="'.get_the_author_meta('facebook', $theAuthroID).'"><img src="'. ATAA_PLUGIN_URL .'/images/icons/'. $options['social_link'] .'/facebook.png"/></a></span>';
-						if($options['show_linkedin'] && get_the_author_meta('linkedin', $theAuthroID) != null)echo '<span class="linkedin"><a href="'.get_the_author_meta('linkedin', $theAuthroID).'"><img src="'. ATAA_PLUGIN_URL .'/images/icons/'. $options['social_link'] .'/linkedin.png"/></a></span>';
+						if($options['show_twitter'] && get_the_author_meta('twitter', $theAuthorID) != null)echo '<span class="twitter"><a href="'.get_the_author_meta('twitter', $theAuthorID).'"><img src="'. ATAA_PLUGIN_URL .'/images/icons/'. $options['social_link'] .'/twitter.png"/></a></span>';
+						if($options['show_facebook'] && get_the_author_meta('facebook', $theAuthorID) != null)echo '<span class="facebook"><a href="'.get_the_author_meta('facebook', $theAuthorID).'"><img src="'. ATAA_PLUGIN_URL .'/images/icons/'. $options['social_link'] .'/facebook.png"/></a></span>';
+						if($options['show_linkedin'] && get_the_author_meta('linkedin', $theAuthorID) != null)echo '<span class="linkedin"><a href="'.get_the_author_meta('linkedin', $theAuthorID).'"><img src="'. ATAA_PLUGIN_URL .'/images/icons/'. $options['social_link'] .'/linkedin.png"/></a></span>';
 					
 					}else{
-						if($options['show_twitter'] && get_the_author_meta('twitter', $theAuthroID) != null)echo '<span class="twitter"><a href="'.get_the_author_meta('twitter', $theAuthroID).'">Twitter</a></span>';
-						if($options['show_facebook'] && get_the_author_meta('facebook', $theAuthroID) != null)echo '<span class="facebook"><a href="'.get_the_author_meta('facebook', $theAuthroID).'">Facebook</a></span>';
-						if($options['show_linkedin'] && get_the_author_meta('linkedin', $theAuthroID) != null)echo '<span class="linkedin"><a href="'.get_the_author_meta('linkedin', $theAuthroID).'">LinkedIn</a></span>';
+						if($options['show_twitter'] && get_the_author_meta('twitter', $theAuthorID) != null)echo '<span class="twitter"><a href="'.get_the_author_meta('twitter', $theAuthorID).'">Twitter</a></span>';
+						if($options['show_facebook'] && get_the_author_meta('facebook', $theAuthorID) != null)echo '<span class="facebook"><a href="'.get_the_author_meta('facebook', $theAuthorID).'">Facebook</a></span>';
+						if($options['show_linkedin'] && get_the_author_meta('linkedin', $theAuthorID) != null)echo '<span class="linkedin"><a href="'.get_the_author_meta('linkedin', $theAuthorID).'">LinkedIn</a></span>';
 					}
 					echo "</p>";
 				}

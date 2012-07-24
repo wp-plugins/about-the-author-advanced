@@ -3,7 +3,7 @@
 * Plugin Name: About the Author Advanced
 * Plugin URI: http://www.drzdigital.com/
 * Description: This plugin creates a sidebar widget which displays the post/page author's information. There are various settings that allow the admin to configure exactly what information is displayed.
-* Version: 0.1
+* Version: 0.1.1
 * Author: Dan Zaniewski
 * Author URI: http://drzdigital.com/wordpress-plugins/about-the-author-advanced/
 * License: GPL2
@@ -30,7 +30,7 @@
 
 
 
-$plugin_version = "0.1";
+$plugin_version = "0.1.1";
 
 
 // Basic globals	
