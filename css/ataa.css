@@ -1,0 +1,22 @@
+.sidebar ul ul.ataa-widget li a{text-decoration:none;border:0;display:inline;}
+.sidebar ul ul.ataa-widget li a:hover{text-decoration:underline;}
+
+.ataa-widget span{display:block;}
+.ataa-widget .avatar{margin:0;margin:3px 0;padding:4px;background:#eee;border:1px solid #aaa;}
+.ataa-widget  .left .avatar{float:left;margin-right:3px;}
+.ataa-widget  .right .avatar{float:right;margin-left:3px;}
+
+.ataa-widget .name{font-weight:bold;font-size:105%;line-height:110%;}
+.ataa-widget .title{color:#777;}
+.ataa-widget .company{color:444;padding-bottom:5px;}
+
+.ataa-widget .phone, .ataa-widget .email, .ataa-widget .web{color:#919498;}
+
+.ataa-widget strong{color:#444;font-weight:normal;}
+
+.ataa-widget .social{margin:8px 0;font-size:95%;}
+.ataa-widget .social span{display:inline;padding:0 5px;line-height:110%;}
+
+.ataa-widget .bio{font-size:12px;line-height:15px;padding-top:5px;margin-bottom:8px;}
+
+.ataa-widget .contact{clear:both;}
