@@ -88,9 +88,18 @@ class Ataa_Widget extends WP_Widget{
 				
 				if($options['show_phone'] || $options['show_email'] || $options['show_web']){
 					echo "<p class='contact'>";
-					if($options['show_phone'] && get_the_author_meta('phone', $theAuthorID) != null)echo '<span class="phone"><strong>Phone : </strong> '. get_the_author_meta('phone', $theAuthorID) . '</span>';
-					if($options['show_email'] && get_the_author_meta('email', $theAuthorID) != null)echo '<span class="email"><strong>Email : </strong> <a href="mailto:'.get_the_author_meta('user_email', $theAuthorID).'">' . get_the_author_meta('user_email', $theAuthorID) . '</a></span>';
-					if($options['show_web'] && get_the_author_meta('user_url', $theAuthorID) != null)echo '<span class="web"><strong>Web : </strong> <a href="'.get_the_author_meta('user_url', $theAuthorID).'">'.get_the_author_meta('user_url', $theAuthorID).'</a></span>';
+					if($options['show_phone'] && get_the_author_meta('phone', $theAuthorID) != null){
+						$phone_label = empty($options['phone_label']) ? '' : '<strong>'.$options['phone_label'].'</strong>';
+						echo '<span class="phone">'. $phone_label . get_the_author_meta('phone', $theAuthorID) . '</span>';
+					}
+					if($options['show_email'] && get_the_author_meta('email', $theAuthorID) != null){
+						$email_label = empty($options['email_label']) ? '' : '<strong>'.$options['email_label'].'</strong>';
+						echo '<span class="email">'. $email_label . '<a href="mailto:'.get_the_author_meta('user_email', $theAuthorID).'">' . get_the_author_meta('user_email', $theAuthorID) . '</a></span>';
+					}
+					if($options['show_web'] && get_the_author_meta('user_url', $theAuthorID) != null){
+						$web_label = empty($options['web_label']) ? '' : '<strong>'.$options['web_label'].'</strong>';
+						echo '<span class="web">' . $web_label . '<a href="'.get_the_author_meta('user_url', $theAuthorID).'">'.get_the_author_meta('user_url', $theAuthorID).'</a></span>';
+					}
 					echo "</p>";
 				}
 				

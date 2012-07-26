@@ -2,8 +2,8 @@
 /**********************************************************************************************
 * Plugin Name: About the Author Advanced
 * Plugin URI: http://www.drzdigital.com/
-* Description: This plugin creates a sidebar widget which displays the post/page author's information. There are various settings that allow the admin to configure exactly what information is displayed.
-* Version: 0.1.1
+* Description: This plugin creates a sidebar widget which displays the post/page author's information in a highly configurable way.
+* Version: 0.2
 * Author: Dan Zaniewski
 * Author URI: http://drzdigital.com/wordpress-plugins/about-the-author-advanced/
 * License: GPL2
@@ -30,7 +30,7 @@
 
 
 
-$plugin_version = "0.1.1";
+$plugin_version = "0.2";
 
 
 // Basic globals	
@@ -57,7 +57,13 @@ add_option(ATAA_VERSION_KEY, ATAA_VERSION_NUM);
 
 if (get_option(MYPLUGIN_VERSION_KEY) != $plugin_version) {
 	    // Execute your upgrade logic here
-	 
+	if(get_option(MYPLUGIN_VERSION_KEY) != "0.2" && $plugin_version == "0.2"){
+		$tmp = get_option('ataa_options');
+		$tmp['phone_label'] = "Phone: ";
+		$tmp['email_label'] = "Email: ";
+		$tmp['web_label'] = "Web: ";
+		update_option('ataa_options', $tmp);
+	}
 	    // Then update the version value
     update_option(MYPLUGIN_VERSION_KEY, $plugin_version);
 }
@@ -109,7 +115,10 @@ function ataa_add_defaults(){
 				"gravatar_align" => "left",
 				"gravatar_size" => "48",
 				"social_text" => "Follow me",
-				"display_admin" => "1"
+				"display_admin" => "1",
+				"phone_label" => "Phone: ",
+				"email_label" => "Email: ",
+				"web_label" => "Web: "
 		);
 		update_option('ataa_options', $arr);
 	}	

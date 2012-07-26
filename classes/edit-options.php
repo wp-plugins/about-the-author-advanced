@@ -29,10 +29,10 @@ class Acip_Edit_Options {
 			<?php $options = get_option('ataa_options'); ?>				
 			
 
-			<table border="0">
-			<tr>
+			<table border="0" cellpadding="20">
+			<tr valign="top">
 			<td>
-				<table class="widefat" cellspacing="10" style="width:600px;">
+				<table class="widefat" cellspacing="10" style="width:500px;">
 					<thead>
 					<tr valign="top">
 						<th colspan="2">
@@ -50,20 +50,127 @@ class Acip_Edit_Options {
 					</tr>					
 				</table>		
 			
-			
-
-										
-						
-				<table class="widefat" cellspacing="10" style="width:600px;margin-top:20px;">
+				
+				<table class="widefat" cellspacing="10" style="width:500px;margin-top:20px;">
 					<thead>
 					<tr valign="top">
 						<th colspan="3">
-							Customize User Contact Fields
+							Widget Options
+						</th>					
+					</tr>
+					
+					</thead>
+					<tr>
+						<td colspan="3" style="border-bottom:0;">
+							<strong>Display Options</strong>						
+						</td>
+					</tr>
+					<tr valign="top">
+						<td>
+							<p><input type="checkbox" name="ataa_options[show_phone]" value="1" <?php checked($options['show_phone']); ?> id="ataa_show_phone" /> Phone</p>
+							<p><input type="checkbox" name="ataa_options[show_email]" value="1" <?php checked($options['show_email']); ?> id="ataa_show_email" /> Email</p>
+							<p><input type="checkbox" name="ataa_options[show_web]" value="1" <?php checked($options['show_web']); ?> id="ataa_show_website" /> Website</p>						
+						</td>
+						<td>
+							<p><input type="checkbox" name="ataa_options[show_bio]" value="1" <?php checked($options['show_bio']); ?> id="ataa_show_bio" /> Bio</p>
+							<p><input type="checkbox" name="ataa_options[show_company]" value="1" <?php checked($options['show_company']); ?> id="ataa_show_company" /> Company</p>
+							<p><input type="checkbox" name="ataa_options[show_title]" value="1" <?php checked($options['show_title']); ?> id="ataa_show_title" /> Title</p>
+						</td>
+						<td>							
+							<p><input type="checkbox" name="ataa_options[show_twitter]" value="1" <?php checked($options['show_twitter']); ?> id="ataa_show_twitter" /> Twitter</p>
+							<p><input type="checkbox" name="ataa_options[show_facebook]" value="1" <?php checked($options['show_facebook']); ?> id="ataa_show_facebook" /> Facebook</p>
+							<p><input type="checkbox" name="ataa_options[show_linkedin]" value="1" <?php checked($options['show_linkedin']); ?> id="ataa_show_linkedin" /> LinkedIn</p>
+						</td>
+					</tr>	
+					<tr valign="top">
+					<td>Display Name</td>
+					<td colspan="2"><select name="ataa_options[display_name]">
+							<option value="1" <?php selected($options['display_name'], 1); ?>>Display Name</option>
+							<option value="2" <?php selected($options['display_name'], 2); ?>>Username</option>
+							<option value="3" <?php selected($options['display_name'], 3); ?>>First Name</option>
+							<option value="4" <?php selected($options['display_name'], 4); ?>>Last Name</option>
+							<option value="5" <?php selected($options['display_name'], 5); ?>>None</option>
+						</select></td>
+					</tr>
+					<tr valign="top">
+					<td>Display Gravatar</td>
+					<td colspan="2"><select name="ataa_options[show_gravatar]">
+							<option value="1" <?php selected($options['show_gravatar'], 1); ?>>Yes</option>
+							<option value="0" <?php selected($options['show_gravatar'], 0); ?>>No</option>
+						</select>
+					</tr>
+					<tr valign="top">
+					<td>Gravatar Alignment</td>
+					<td colspan="2"><select name="ataa_options[gravatar_align]">
+							<option value="left" <?php selected($options['gravatar_align'], 'left'); ?>>Left</option>
+							<option value="right" <?php selected($options['gravatar_align'], 'right'); ?>>Right</option>
+						</select>
+					</tr>
+					<tr valign="top">
+					<td>Gravatar Size</td>
+					<td colspan="2"><select name="ataa_options[gravatar_size]">
+							<option value="32" <?php selected($options['gravatar_size'], 32); ?>> 32px </option>
+							<option value="48" <?php selected($options['gravatar_size'], 48); ?>> 48px </option>
+							<option value="64" <?php selected($options['gravatar_size'], 64); ?>> 64px </option>
+							<option value="80" <?php selected($options['gravatar_size'], 80); ?>> 80px </option>
+						</select>
+					</tr>
+					<tr valign="top">
+					<td>Social Links</td>
+					<td colspan="2"><select name="ataa_options[social_link]">
+							<option value="0" <?php selected($options['social_link'], 0); ?>> Link Only </option>
+							<option value="16" <?php selected($options['social_link'], 16); ?>> 16px Icons </option>
+							<option value="32" <?php selected($options['social_link'], 32); ?>> 32px Icons </option>
+							<option value="48" <?php selected($options['social_link'], 48); ?>> 48px Icons </option>
+							<option value="64" <?php selected($options['social_link'], 64); ?>> 64px Icons </option>
+						</select>
+					</tr>					
+				</table>
+										
+				<p class="submit">
+					<input type="submit" class="button-primary" value="Save Changes" />
+				</p>
+				</form>
+			</td>
+			<td>
+		
+				<table class="widefat" cellspacing="10">
+					<thead>
+					<tr valign="top">
+						<th colspan="2">
+							Language Options
+						</th>					
+					</tr>					
+					</thead>
+					<tr valign="top">
+					<td>Email Label</td>
+					<td><input type="text" name="ataa_options[email_label]" value="<?php echo $options['email_label']; ?>" /></td>
+					</tr>				
+					<tr valign="top">
+					<td>Phone Label</td>
+					<td><input type="text" name="ataa_options[phone_label]" value="<?php echo $options['phone_label']; ?>" /></td>
+					</tr>	
+					<tr valign="top">
+					<td>Web Label</td>
+					<td><input type="text" name="ataa_options[web_label]" value="<?php echo $options['web_label']; ?>" /></td>
+					</tr>	
+					<tr valign="top">
+					<td>Social Label</td>
+					<td><input type="text" name="ataa_options[social_text]" value="<?php echo $options['social_text']; ?>" /></td>
+					</tr>	
+				</table>	
+
+				
+				<table class="widefat" cellspacing="10" style="margin-top:20px;">
+					<thead>
+					<tr valign="top">
+						<th colspan="3">
+							User Contact Fields
 						</th>					
 					</tr>
 					<tr>
 						<td>
-							<strong>Additional Contact Fields</strong>
+							<strong>Contact Fields</strong>
 						</td>
 						<td>
 							<strong>Instant Messaging</strong>
@@ -91,89 +198,6 @@ class Acip_Edit_Options {
 						</td>
 					</tr>				
 				</table>
-				
-				
-				<table class="widefat" cellspacing="10" style="width:600px;margin-top:20px;">
-					<thead>
-					<tr valign="top">
-						<th colspan="2">
-							Widget Options
-						</th>					
-					</tr>
-					
-					</thead>
-					<tr>
-						<td colspan="2" style="border-bottom:0;">
-							<strong>Display Options</strong>						
-						</td>
-					</tr>
-					<tr valign="top">
-						<td>
-							<?php if($options['phone']){?><p><input type="checkbox" name="ataa_options[show_phone]" value="1" <?php checked($options['show_phone']); ?> id="ataa_show_phone" /> Phone</p><?php } ?>
-							<p><input type="checkbox" name="ataa_options[show_email]" value="1" <?php checked($options['show_email']); ?> id="ataa_show_email" /> Email</p>
-							<p><input type="checkbox" name="ataa_options[show_web]" value="1" <?php checked($options['show_web']); ?> id="ataa_show_website" /> Website</p>						
-							<p><input type="checkbox" name="ataa_options[show_bio]" value="1" <?php checked($options['show_bio']); ?> id="ataa_show_bio" /> Bio</p>
-							<?php if($options['company']){?><p><input type="checkbox" name="ataa_options[show_company]" value="1" <?php checked($options['show_company']); ?> id="ataa_show_company" /> Company</p><?php } ?>
-							<?php if($options['title']){?><p><input type="checkbox" name="ataa_options[show_title]" value="1" <?php checked($options['show_title']); ?> id="ataa_show_title" /> Title</p><?php } ?>
-						</td>		
-						<td>
-							<p><input type="checkbox" name="ataa_options[show_gravatar]" value="1" <?php checked($options['show_gravatar']); ?> id="ataa_show_gravatar" /> Gravatar</p>
-							<?php if($options['twitter']){?><p><input type="checkbox" name="ataa_options[show_twitter]" value="1" <?php checked($options['show_twitter']); ?> id="ataa_show_twitter" /> Twitter</p><?php } ?>
-							<?php if($options['facebook']){?><p><input type="checkbox" name="ataa_options[show_facebook]" value="1" <?php checked($options['show_facebook']); ?> id="ataa_show_facebook" /> Facebook</p><?php } ?>
-							<?php if($options['linkedin']){?><p><input type="checkbox" name="ataa_options[show_linkedin]" value="1" <?php checked($options['show_linkedin']); ?> id="ataa_show_linkedin" /> LinkedIn</p><?php } ?>
-						</td>
-					</tr>	
-					<tr valign="top">
-					<td>Display Name</td>
-					<td><select name="ataa_options[display_name]">
-							<option value="1" <?php selected($options['display_name'], 1); ?>>Display Name</option>
-							<option value="2" <?php selected($options['display_name'], 2); ?>>Username</option>
-							<option value="3" <?php selected($options['display_name'], 3); ?>>First Name</option>
-							<option value="4" <?php selected($options['display_name'], 4); ?>>Last Name</option>
-							<option value="5" <?php selected($options['display_name'], 5); ?>>None</option>
-						</select></td>
-					</tr>
-					<tr valign="top">
-					<td>Gravatar Alignment</td>
-					<td><select name="ataa_options[gravatar_align]">
-							<option value="left" <?php selected($options['gravatar_align'], 'left'); ?>>Left</option>
-							<option value="right" <?php selected($options['gravatar_align'], 'right'); ?>>Right</option>
-						</select>
-					</tr>
-					<tr valign="top">
-					<td>Gravatar Size</td>
-					<td><select name="ataa_options[gravatar_size]">
-							<option value="32" <?php selected($options['gravatar_size'], 32); ?>> 32px </option>
-							<option value="48" <?php selected($options['gravatar_size'], 48); ?>> 48px </option>
-							<option value="64" <?php selected($options['gravatar_size'], 64); ?>> 64px </option>
-							<option value="80" <?php selected($options['gravatar_size'], 80); ?>> 80px </option>
-						</select>
-					</tr>
-					<tr valign="top">
-					<td>Social Links</td>
-					<td><select name="ataa_options[social_link]">
-							<option value="0" <?php selected($options['social_link'], 0); ?>> Link Only </option>
-							<option value="16" <?php selected($options['social_link'], 16); ?>> 16px Icons </option>
-							<option value="32" <?php selected($options['social_link'], 32); ?>> 32px Icons </option>
-							<option value="48" <?php selected($options['social_link'], 48); ?>> 48px Icons </option>
-							<option value="64" <?php selected($options['social_link'], 64); ?>> 64px Icons </option>
-						</select>
-					</tr>
-					<tr valign="top">
-					<td>Social Text</td>
-					<td><input type="text" name="ataa_options[social_text]" value="<?php echo $options['social_text']; ?>" /></td>
-					</tr>
-				</table>
-										
-				<p class="submit">
-					<input type="submit" class="button-primary" value="Save Changes" />
-				</p>
-				</form>
-			</td>
-			<td>
-		
-
-
 		
 			</td>
 		</tr>
