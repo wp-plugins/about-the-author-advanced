@@ -130,7 +130,7 @@ class Acip_Edit_Options {
 				<p class="submit">
 					<input type="submit" class="button-primary" value="Save Changes" />
 				</p>
-				</form>
+			
 			</td>
 			<td>
 		
@@ -198,7 +198,7 @@ class Acip_Edit_Options {
 						</td>
 					</tr>				
 				</table>
-		
+			</form>
 			</td>
 		</tr>
 		</table>

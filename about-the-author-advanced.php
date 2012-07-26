@@ -3,7 +3,7 @@
 * Plugin Name: About the Author Advanced
 * Plugin URI: http://www.drzdigital.com/
 * Description: This plugin creates a sidebar widget which displays the post/page author's information in a highly configurable way.
-* Version: 0.2
+* Version: 0.2.1
 * Author: Dan Zaniewski
 * Author URI: http://drzdigital.com/wordpress-plugins/about-the-author-advanced/
 * License: GPL2
@@ -30,7 +30,7 @@
 
 
 
-$plugin_version = "0.2";
+$plugin_version = "0.2.1";
 
 
 // Basic globals	
@@ -47,26 +47,21 @@ if (!defined('ATAA_PLUGIN_URL'))
     define('ATAA_PLUGIN_URL', WP_PLUGIN_URL . '/' . ATAA_PLUGIN_NAME);
 	
 	
+	
 // Define the plugin version for future update use.	
-if (!defined('ATAA_VERSION_KEY'))
-    define('ATAA_VERSION_KEY', 'ataalugin_version');
 if (!defined('ATAA_VERSION_NUM'))
     define('ATAA_VERSION_NUM', $plugin_version);
-add_option(ATAA_VERSION_KEY, ATAA_VERSION_NUM);
+add_option(ataa_version_key, ATAA_VERSION_NUM);
 
 
-if (get_option(MYPLUGIN_VERSION_KEY) != $plugin_version) {
+if (get_option('ataa_version_key') != $plugin_version) {
 	    // Execute your upgrade logic here
-	if(get_option(MYPLUGIN_VERSION_KEY) != "0.2" && $plugin_version == "0.2"){
-		$tmp = get_option('ataa_options');
-		$tmp['phone_label'] = "Phone: ";
-		$tmp['email_label'] = "Email: ";
-		$tmp['web_label'] = "Web: ";
-		update_option('ataa_options', $tmp);
-	}
+
 	    // Then update the version value
-    update_option(MYPLUGIN_VERSION_KEY, $plugin_version);
+    update_option('ataa_version_key', $plugin_version);
 }
+	
+
 
 	
 function requires_wordpress_version() {
@@ -97,6 +92,7 @@ add_action('admin_init', 'ataa_init' );
 	
 function ataa_init(){
 	register_setting( 'ataa_plugin_options', 'ataa_options' );
+	register_setting( 'ataa_plugin_options', 'ataa_version_key' );
 }	
 
 function ataa_add_defaults(){
