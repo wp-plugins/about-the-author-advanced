@@ -58,8 +58,7 @@ class Ataa_Widget extends WP_Widget{
 		if ( in_array($thePostID,$excluded) || is_home() ) return false;  //don't show widget if page is excluded
 		if ( is_numeric($theAuthorID) && user_can( $theAuthorID, 'administrator' ) && !$options['display_admin']) return false;
 		
-		if( (is_single() && ($instance['displayOn'] = 3 && $instance['displayOn'] != 1)) || (is_page() && ($instance['displayOn'] != 2 && $instance['displayOn'] != 1))) return false;
-		
+		if( (is_single() && ($instance['displayOn'] == 2)) || (is_page() && ($instance['displayOn'] == 3 ))) return false;
 		
 		if(is_numeric($theAuthorID)){
 					
