@@ -3,7 +3,7 @@
 * Plugin Name: About the Author Advanced
 * Plugin URI: http://www.drzdigital.com/
 * Description: This plugin creates a sidebar widget which displays the post/page author's information in a highly configurable way.
-* Version: 0.2.1
+* Version: 0.2.2
 * Author: Dan Zaniewski
 * Author URI: http://drzdigital.com/wordpress-plugins/about-the-author-advanced/
 * License: GPL2
@@ -30,7 +30,7 @@
 
 
 
-$plugin_version = "0.2.1";
+$plugin_version = "0.2.2";
 
 
 // Basic globals	
@@ -106,6 +106,7 @@ function ataa_add_defaults(){
 				"show_email" => "1",
 				"show_twitter" => "1",
 				"show_facebook" => "1",
+				"show_gplus"=> "0",
 				"display_name" => "1",
 				"css" => "1",
 				"gravatar_align" => "left",
@@ -126,6 +127,7 @@ function ataa_default_contactmethods( $contactmethods ) {
 			if($options['phone']){ $contactmethods['phone'] = 'Phone' ; }else{ unset($contactmethods['phone']);}
 			if($options['twitter']){ $contactmethods['twitter'] = 'Twitter' ; }else{ unset($contactmethods['twitter']);}
 			if($options['facebook']){ $contactmethods['facebook'] = 'Facebook' ; }else{ unset($contactmethods['facebook']);}
+			if($options['gplus']){ $contactmethods['gplus'] = 'Google+' ; }else{ unset($contactmethods['gplus']);}
 			unset($contactmethods['jabber']);	
 	return $contactmethods;
 }

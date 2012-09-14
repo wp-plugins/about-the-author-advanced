@@ -6,7 +6,7 @@ Donate link: http://tinyurl.com/about-author-advanced
 Tags: author, author info, about the author, author bio, author bio widget, about the author widget, author widget, contact info, contact, author contact widget, contact widget
 Requires at least: 3.0
 Tested up to: 3.4.1
-Stable tag: 0.2.1
+Stable tag: 0.2.2
 
 This plugin creates a sidebar widget which displays the post/page author's information. 
 
@@ -42,6 +42,9 @@ This plugin creates a sidebar widget which displays information about the author
 5. Complete plugin settings
 
 == Changelog ==
+
+= 0.2.2 =
+* Added Google+ as an icon option
 
 = 0.2.1 =
 * Fixed issue with saving customized language options

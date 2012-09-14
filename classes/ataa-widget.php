@@ -58,7 +58,7 @@ class Ataa_Widget extends WP_Widget{
 		if ( in_array($thePostID,$excluded) || is_home() ) return false;  //don't show widget if page is excluded
 		if ( is_numeric($theAuthorID) && user_can( $theAuthorID, 'administrator' ) && !$options['display_admin']) return false;
 		
-		if( (is_single() && ($instance['displayOn'] != 3 && $instance['displayOn'] != 1)) || (is_page() && ($instance['displayOn'] != 2 && $instance['displayOn'] != 1))) return false;
+		if( (is_single() && ($instance['displayOn'] = 3 && $instance['displayOn'] != 1)) || (is_page() && ($instance['displayOn'] != 2 && $instance['displayOn'] != 1))) return false;
 		
 		
 		if(is_numeric($theAuthorID)){
@@ -104,18 +104,19 @@ class Ataa_Widget extends WP_Widget{
 				}
 				
 				
-				if(($options['show_twitter'] && get_the_author_meta('twitter', $theAuthorID) != null) || ($options['show_facebook'] && get_the_author_meta('facebook', $theAuthorID) != null) || ($options['show_linkedin'] && get_the_author_meta('linkedin', $theAuthorID) != null)){
+				if(($options['show_twitter'] && get_the_author_meta('twitter', $theAuthorID) != null) || ($options['show_facebook'] && get_the_author_meta('facebook', $theAuthorID) != null) || ($options['show_linkedin'] && get_the_author_meta('linkedin', $theAuthorID) != null) || ($options['show_gplus'] && get_the_author_meta('gplus', $theAuthorID) != null)){
 					echo "<p class='social'>";
 					if($options['social_text'] != null){ echo $options['social_text'] ."<br/>"; }
 					if($options['social_link']){
 						if($options['show_twitter'] && get_the_author_meta('twitter', $theAuthorID) != null)echo '<span class="twitter"><a href="'.get_the_author_meta('twitter', $theAuthorID).'"><img src="'. ATAA_PLUGIN_URL .'/images/icons/'. $options['social_link'] .'/twitter.png"/></a></span>';
 						if($options['show_facebook'] && get_the_author_meta('facebook', $theAuthorID) != null)echo '<span class="facebook"><a href="'.get_the_author_meta('facebook', $theAuthorID).'"><img src="'. ATAA_PLUGIN_URL .'/images/icons/'. $options['social_link'] .'/facebook.png"/></a></span>';
 						if($options['show_linkedin'] && get_the_author_meta('linkedin', $theAuthorID) != null)echo '<span class="linkedin"><a href="'.get_the_author_meta('linkedin', $theAuthorID).'"><img src="'. ATAA_PLUGIN_URL .'/images/icons/'. $options['social_link'] .'/linkedin.png"/></a></span>';
-					
+						if($options['show_gplus'] && get_the_author_meta('gplus', $theAuthorID) != null)echo '<span class="gplus"><a href="'.get_the_author_meta('gplus', $theAuthorID).'"><img src="'. ATAA_PLUGIN_URL .'/images/icons/'. $options['social_link'] .'/gplus.png"/></a></span>';					
 					}else{
 						if($options['show_twitter'] && get_the_author_meta('twitter', $theAuthorID) != null)echo '<span class="twitter"><a href="'.get_the_author_meta('twitter', $theAuthorID).'">Twitter</a></span>';
 						if($options['show_facebook'] && get_the_author_meta('facebook', $theAuthorID) != null)echo '<span class="facebook"><a href="'.get_the_author_meta('facebook', $theAuthorID).'">Facebook</a></span>';
 						if($options['show_linkedin'] && get_the_author_meta('linkedin', $theAuthorID) != null)echo '<span class="linkedin"><a href="'.get_the_author_meta('linkedin', $theAuthorID).'">LinkedIn</a></span>';
+						if($options['show_gplus'] && get_the_author_meta('gplus', $theAuthorID) != null)echo '<span class="gplus"><a href="'.get_the_author_meta('gplus', $theAuthorID).'">Google+</a></span>';
 					}
 					echo "</p>";
 				}

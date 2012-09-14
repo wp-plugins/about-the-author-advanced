@@ -80,6 +80,7 @@ class Acip_Edit_Options {
 							<p><input type="checkbox" name="ataa_options[show_twitter]" value="1" <?php checked($options['show_twitter']); ?> id="ataa_show_twitter" /> Twitter</p>
 							<p><input type="checkbox" name="ataa_options[show_facebook]" value="1" <?php checked($options['show_facebook']); ?> id="ataa_show_facebook" /> Facebook</p>
 							<p><input type="checkbox" name="ataa_options[show_linkedin]" value="1" <?php checked($options['show_linkedin']); ?> id="ataa_show_linkedin" /> LinkedIn</p>
+							<p><input type="checkbox" name="ataa_options[show_gplus]" value="1" <?php checked($options['show_gplus']); ?> id="ataa_show_linkedin" /> Google+</p>
 						</td>
 					</tr>	
 					<tr valign="top">
@@ -195,6 +196,7 @@ class Acip_Edit_Options {
 							<p><input type="checkbox" name="ataa_options[twitter]" value="1" <?php checked($options['twitter']); ?> id="ataa_twitter" /> Twitter</p>
 							<p><input type="checkbox" name="ataa_options[facebook]" value="1" <?php checked($options['facebook']); ?> id="ataa_facebook" /> Facebook</p>
 							<p><input type="checkbox" name="ataa_options[linkedin]" value="1" <?php checked($options['linkedin']); ?> id="ataa_linkedin" /> LinkedIn</p>
+							<p><input type="checkbox" name="ataa_options[gplus]" value="1" <?php checked($options['gplus']); ?> id="ataa_linkedin" /> Google+</p>
 						</td>
 					</tr>				
 				</table>
@@ -217,6 +219,7 @@ class Acip_Edit_Options {
 			if($options['twitter']){ $contactmethods['twitter'] = 'Twitter URL' ; }else{ unset($contactmethods['twitter']); unset($options['show_twitter']);}
 			if($options['facebook']){ $contactmethods['facebook'] = 'Facebook URL' ; }else{ unset($contactmethods['facebook']); unset($options['show_facebook']);}
 			if($options['linkedin']){ $contactmethods['linkedin'] = 'LinkedIn URL' ; }else{ unset($contactmethods['linkedin']); unset($options['show_linkedin']);}
+			if($options['gplus']){ $contactmethods['gplus'] = 'Google+ URL' ; }else{ unset($contactmethods['gplus']); unset($options['show_gplus']);}
 			if($options['company']){ $contactmethods['company'] = 'Company Name' ; }else{ unset($contactmethods['company']); unset($options['show_company']);}
 			if($options['title']){ $contactmethods['title'] = 'Title' ; }else{ unset($contactmethods['title']); unset($options['show_title']);}
 						
